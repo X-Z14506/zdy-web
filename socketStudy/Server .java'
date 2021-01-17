@@ -1,0 +1,41 @@
+
+public class Server {
+    public static void main(String[] args) throws IOException {
+        //1.创建server的socket，
+        // 内部会进行本地ip+port的绑定
+        // 例子：饭店开张，提供一个大家都认识的地段ip+port
+        // ip虽然没穿传，内部会帮我们处理，把所有的ip都会绑定
+        try (DatagramSocket socket = new DatagramSocket(9939)){
+            //2.开门迎客，通过循环，处理业务
+           while (true) {
+               //3.处理一个要求
+               action(socket);
+           }
+        }
+    }
+
+    /**
+     * 处理要求
+     * @param socket
+     */
+    private static void action(DatagramSocket socket) throws IOException {
+        //读取客户端发来的请求
+
+        //1.1准备一个字节数组，用来一会存放要读到的数据
+        byte[] receiveBuffer = new byte[8192];
+        //1.2吧buffer封装成datagram
+        DatagramPacket receivePacket = new DatagramPacket(receiveBuffer,0,8192);
+        //1.3入去请求
+        socket.receive(receivePacket);
+        //1.4从receive中返回，就意味着，有人给我发送请求了
+
+        System.out.println(Arrays.toString(
+                                  Arrays.copyOfRange(
+                                          receiveBuffer,0,receivePacket.getLength())
+                          )
+        );
+
+        //进行服务，根据请求，处理业务，并生成响应
+        //发送响应回去
+    }
+}
