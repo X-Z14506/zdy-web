@@ -1,0 +1,13 @@
+
+
+
+$(function main() {
+    let ol = $("#content");
+    $("button").on("click", function () {
+        $.get("./text.txt", function (data) {
+            console.log(data);
+
+            ol.append("<li>"+data+"</li>")
+        });
+    });
+});

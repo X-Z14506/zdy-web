@@ -1,0 +1,9 @@
+body{
+    background-image:url("../image/huyan2.jpg");
+}
+
+.center {
+    text-align: center;
+    font-size: 30px;
+    color: blue;
+}

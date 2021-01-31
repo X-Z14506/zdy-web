@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+<table>
+    <caption>message</caption>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>when</th>
+        <th>who</th>
+        <th>what</th>
+    </tr>
+    </thead>
+    <tbody>
+    <form method="post" action="post-message.api">
+        <input type="text" name="who">
+        <input type="text" name="what">
+        <button>发布留言</button>
+    </form>
+    </tbody>
+</table>
+
+<script src="./jquery-3.5.0.min.js"></script>
+<script src="./js/message-list.js"></script>
+</body>
+</html>

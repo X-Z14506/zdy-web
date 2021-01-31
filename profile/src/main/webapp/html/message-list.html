@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+   <table>
+       <caption>message</caption>
+       <thead>
+            <tr>
+                <th>id</th>
+                <th>when</th>
+                <th>who</th>
+                <th>what</th>
+
+            </tr>
+       </thead>
+       <tbody>
+            <form method="post" action="post-message.api">
+                <input type="text" name="who">
+                <input type="text" name="what">
+
+                <button>发布留言</button>
+            </form>
+
+       </tbody>
+       <!-- <caption>学生信息</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>学校</th>
+                <th>班级</th>
+                <th>学号</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张丁玉</td>
+                <td>西安工程大学</td>
+                <td>机械电子工程1701</td>
+                <td>41702120116</td>
+            </tr>
+            <tr>
+                <td>胡煜华</td>
+                <td>西安工程大学</td>
+                <td>计算机科学与技术卓越班1701</td>
+                <td>41702120117</td>
+            </tr>
+        </tbody>-->
+   </table>
+
+<script src="../jquery-3.5.0.min.js"></script>
+<script src="../js/message-list.js"></script>
+</body>
+</html>
